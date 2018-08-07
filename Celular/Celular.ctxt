@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Celular()
+comment1.params=x
+comment1.target=Celular(int)
+comment2.params=
+comment2.target=int\ getCreditos()
+comment3.params=x
+comment3.target=void\ setCreditos(int)
+comment4.params=x
+comment4.target=void\ topUp(int)
+comment5.params=
+comment5.target=void\ call()
+numComments=6
