@@ -43,7 +43,10 @@ public class ClockDisplay
     
     private void updateDisplay()
     {
-        displayString = hours.getDisplayValue() + ":" + 
-                        minutes.getDisplayValue();
+        if(hours.getDisplayValue().indexOf("am")!= -1){
+            displayString = hours.getDisplayValue().substring(0,2) + ":" + minutes.getDisplayValue() + "am";
+        }else{
+            displayString = hours.getDisplayValue().substring(0,2) + ":" + minutes.getDisplayValue() + "pm";
+        }
     }
 }
