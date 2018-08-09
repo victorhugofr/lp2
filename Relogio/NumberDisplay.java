@@ -1,17 +1,14 @@
 
-public class NumberDisplay
-{
+public class NumberDisplay{
     private int limit;
     private int value;
 
-    public NumberDisplay(int rollOverLimit)
-    {
+    public NumberDisplay(int rollOverLimit){
         limit = rollOverLimit;
         value = 0;
     }
 
-    public int getValue()
-    {
+    public int getValue(){
         return value;
     }
 
@@ -33,16 +30,14 @@ public class NumberDisplay
         }
     }
 
-    public void setValue(int replacementValue)
-    {
+    public void setValue(int replacementValue){
         if((replacementValue >= 0) && (replacementValue < limit)) {
             value = replacementValue;
         }
     }
 
 
-    public void increment()
-    {
+    public void increment(){
         value = (value + 1) % limit;
     }
 }
