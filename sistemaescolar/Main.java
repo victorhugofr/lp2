@@ -1,0 +1,11 @@
+import java.util.*;
+public class Main{
+	public static void main( String[] args){
+		Aluno a = new Aluno(3.0,2.0, 1.0,4.0);
+		Aluno b = new Aluno(4.0,2.0, 2.0,5.0);
+		Aluno c = new Aluno(5.0,2.0, 5.5 , 4.5);
+		Turma t1= new Turma(a,b,c);
+		
+		t1.calcularMedia();
+	}
+}
