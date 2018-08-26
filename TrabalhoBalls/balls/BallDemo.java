@@ -32,12 +32,14 @@ public class BallDemo
      */
     public void bounce()
     {
-        int ground = 400;   // position of the ground line
-        int xStart = 70;    // x-start of the ground line
-        int xLimit = 520;   // x-limit of the ground line
-        int n;
-        Random gerador = new Random();
-
+    	Dimension dimaux; // to calculate a dimensions 
+    	dimaux=myCanvas.getSize();
+    	Random gerador = new Random();
+        int ground = 400-gerador.nextInt(100);   // position of the ground line
+        int xStart = 150;    // x-start of the ground line
+        int xLimit = dimaux.width - 150;   // x-limit of the ground line
+        int n; // numbers of balls
+     
         myCanvas.setVisible(true);
         Scanner dados = new Scanner(System.in);
 		System.out.println("Digite o numero de bolas");
@@ -46,57 +48,75 @@ public class BallDemo
 			System.out.println("ERRO! Quantidade invalida");
 			return ;
 		}
-		BouncingBall ball[] = new BouncingBall[n];//(xStart, 50, 16, Color.blue, ground, myCanvas);
+		BouncingBall ball[] = new BouncingBall[n]; 
 
         // draw the ground
         myCanvas.setForegroundColor(Color.blue);
         myCanvas.drawLine(xStart, ground, xLimit, ground);
-        int aux;
         // crate and show the balls
+        int aux;
+        Color cor;
         for(int i=0;i<n;i++){
         	aux=gerador.nextInt(25);
-    	     ball[i] = new BouncingBall(aux+i*20, 50, 16, Color.blue, ground, myCanvas);
+        	cor = getColor(aux);
+    	    ball[i] = new BouncingBall(xStart + aux+i*20, (dimaux.height/2)-aux*10, 16, cor, ground, myCanvas);
+    		ball[i].draw();
     	}
-        for(int i=0;i<n;i++){
-       		ball[i].draw();
-       	}
-
-        // Make them bounce until both have gone beyond the xLimit.
-        boolean finished =  false;
+       	
+        boolean ballfinished[] =  new boolean[n];
+        boolean finished = false;
         int cont=0;
         while(!finished) {
             myCanvas.wait(50);           // small delay
-            while(ball[cont].getXPosition()>=xLimit){
-        	   // if(ball[cont].getXPosition() >= xLimit) {
+            if(ball[cont].getXPosition()>=xLimit){ 
+        	  	ball[cont].erase();
+        	   	ballfinished[cont]=true;
         	        cont++;
         	        if(cont==n){
         	        	break;
         	        }
-        	    //}
         	}
             for(int z=0;z<n;z++){
-        	    ball[z].move();
+            	if(ballfinished[z]==false){
+        		    ball[z].move();
+        		}
         	}
-        	if(cont==n){
+        	if(cont>=n){
         		finished=true;
         		break;
         	}
-            // stop once ball has travelled a certain distance on x axis
-            
+            // stop once ball has travelled a certain distance on x axis   
         }
-         for(int i=0;i<n;i++){
-    	    ball[i].erase();
-    	}
-        
+        return;
     }
     /**
     *Create a new rectangle
     */
     public void drawFrame(){
-        int x = 20, y = 20;
         Dimension tamanho = new Dimension (myCanvas.getSize());
-        Rectangle retangulo = new Rectangle(x, y, tamanho.width-(2*x), tamanho.height-(2*y));
+        Rectangle retangulo = new Rectangle(20, 20, tamanho.width-(2*20), tamanho.height-(2*20));
         myCanvas.draw(retangulo);
     }
-    
+    /**
+    *Get a random color to balls
+    */
+    public Color getColor(int a){
+    	switch(a%7){
+    		case 0:
+    			return Color.black;
+    		case 1:
+    			return Color.blue;
+    		case 2:
+    			return Color.cyan;
+    		case 3:
+    			return Color.darkGray;
+    		case 4:
+    			return Color.gray;
+    		case 5:
+    			return Color.green;
+    		case 6:
+    			return Color.pink;
+    	}
+    	return Color.black;
+    }
 }
