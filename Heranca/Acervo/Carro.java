@@ -1,0 +1,20 @@
+public class Carro extends Duravel{
+	private int quilometragem;
+	private String combustivel;
+	
+	public Carro(String combustivel){
+		this.combustivel=combustivel;
+	}
+	public void setQuilometragem(int quilometragem){
+		this.quilometragem=quilometragem;	
+	}
+	public int getQuilometragem(){
+		return quilometragem;
+	}
+	public String getCombustivel(){
+		return combustivel;
+	}
+	public void andar(){
+		quilometragem++;
+	}
+}
