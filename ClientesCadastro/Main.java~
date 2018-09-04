@@ -8,7 +8,6 @@ public class Main{
 		System.out.println("A quantidade de clientes cadastrados é : "+s1.qtdClientesTotal());
 		System.out.println("A quantidade de clientes fisicos é : "+s1.qtdClientesPF());
 		System.out.println("A quantidade de clientes juridicos é : "+s1.qtdClientesPJ());
-		s1.imprimirpfs();
-		//s1.imprimirpjs();
+		s1.imprimir();
 	}
 }

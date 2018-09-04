@@ -3,12 +3,11 @@ public class Main{
 		Sistema s1 = new Sistema();
 		PF victor = new PF("victor","rua joao lindolfo","84 996885295","70875454429");
 		PJ cartorio = new PJ("associacao cartorio LTDA","rua americo vespucio", "32220319","11139846","2 oficio de notas");
-		s1.addClientepf(victor);
-		s1.addClientepj(cartorio);
+		s1.addCliente(victor);
+		s1.addCliente(cartorio);
 		System.out.println("A quantidade de clientes cadastrados é : "+s1.qtdClientesTotal());
 		System.out.println("A quantidade de clientes fisicos é : "+s1.qtdClientesPF());
 		System.out.println("A quantidade de clientes juridicos é : "+s1.qtdClientesPJ());
-		s1.imprimirpfs();
-		s1.imprimirpjs();
+		s1.imprimir();
 	}
 }

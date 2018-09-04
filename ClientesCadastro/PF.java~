@@ -3,7 +3,7 @@ public class PF extends Cliente{
 	
 	public PF(String nome,String endereco,String telefone,String cpf){
 		super(nome,endereco,telefone);
-		this.cpf=cpf
+		this.cpf=cpf;
 	}
 	public String getCpf(){
 		return cpf;
@@ -12,7 +12,8 @@ public class PF extends Cliente{
 		this.cpf=cpf;
 	}
 	public void imprimirDados(){
-		super.print();
+		super.imprimirDados();
 		System.out.println("CPF : "+cpf);
+		System.out.println("--------------------------"+cpf);
 	}
 }

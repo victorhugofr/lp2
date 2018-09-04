@@ -26,7 +26,7 @@ public class Cliente{
 	public void setTelefone(String telefone){
 		this.telefone=telefone;
 	}
-	public void print(){
+	public void imprimirDados(){
 		System.out.println("Nome : "+nome);
 		System.out.println("Endereco : "+endereco);
 		System.out.println("Telefone : "+telefone);

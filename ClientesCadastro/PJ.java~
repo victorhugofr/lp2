@@ -2,7 +2,7 @@ public class PJ extends Cliente{
 	private String cnpj;
 	private String nomefantasia;
 	
-	public PF(String nome,String endereco,String telefone,String cnpj,String nomefantasia){
+	public PJ(String nome,String endereco,String telefone,String cnpj,String nomefantasia){
 		super(nome,endereco,telefone);
 		this.cnpj=cnpj;
 		this.nomefantasia = nomefantasia;
@@ -20,7 +20,7 @@ public class PJ extends Cliente{
 		this.nomefantasia = nomefantasia;
 	}
 	public void imprimirDados(){
-		super.print();
+		super.imprimirDados();
 		System.out.println("CNPJ : "+cnpj);
 		System.out.println("Nome fantasia : "+nomefantasia);
 	}

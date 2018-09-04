@@ -12,7 +12,8 @@ public class PF extends Cliente{
 		this.cpf=cpf;
 	}
 	public void imprimirDados(){
-		super.print();
+		super.imprimirDados();
 		System.out.println("CPF : "+cpf);
+		System.out.println("--------------------------");
 	}
 }

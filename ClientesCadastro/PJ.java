@@ -20,8 +20,9 @@ public class PJ extends Cliente{
 		this.nomefantasia = nomefantasia;
 	}
 	public void imprimirDados(){
-		super.print();
+		super.imprimirDados();
 		System.out.println("CNPJ : "+cnpj);
 		System.out.println("Nome fantasia : "+nomefantasia);
+		System.out.println("--------------------------");
 	}
 }

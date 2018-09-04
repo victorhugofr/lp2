@@ -1,41 +1,41 @@
 import java.util.*;
 public class Sistema{
-	private List<PF> clientespf;
-	private List<PJ> clientespj;
+	private List<Cliente> clientes;
 	
 	public Sistema(){
-		clientespf=new ArrayList<PF>();
-		clientespj=new ArrayList<PJ>();
+		clientes=new ArrayList<Cliente>();
 	} 
-	public void addClientepf(PF x){
-		clientespf.add(x);
+	public void addCliente(Cliente x){
+		clientes.add(x);
 	}
-	public void addClientepj(PJ x){
-		clientespj.add(x);
-	}
-	public void removeClientepf(PF x){
-		clientespf.remove(x);	
-	}
-	public void removeClientepj(PJ x){
-		clientespj.remove(x);	
+	public void removeCliente(Cliente x){
+		clientes.remove(x);	
 	}
 	public int qtdClientesTotal(){
-		return (clientespf.size()+clientespj.size());
+	
+		return clientes.size();
 	}
 	public int qtdClientesPF(){
-		return clientespf.size();
+		int aux = 0;
+		for(int i = 0; i < clientes.size(); i++){
+			if(clientes instanceof PF){
+    				aux++;
+			}
+		}
+		return aux;
 	}
 	public int qtdClientesPJ(){
-		return clientespj.size();
-	}
-	public void imprimirpfs(){
-		for(int i = 0; i < clientespf.size(); i++){
-    			clientespf.get(i).imprimirDados();
+		int aux = 0;
+		for(int i = 0; i < clientes.size(); i++){
+			if(clientes instanceof PJ){
+    				aux++;
+			}
 		}
+		return aux;
 	}
-	public void imprimirpjs(){
-		for(int i = 0; i < clientespj.size(); i++){
-   			clientespj.get(i).imprimirDados();
+	public void imprimir(){
+		for(int i = 0; i < clientes.size(); i++){
+			clientes.get(i).imprimirDados();
 		}
 	}
 	
