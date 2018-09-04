@@ -18,7 +18,7 @@ public class Sistema{
 	public int qtdClientesPF(){
 		int aux = 0;
 		for(int i = 0; i < clientes.size(); i++){
-			if(clientes instanceof PF){
+			if(clientes.get(i) instanceof PF){
     				aux++;
 			}
 		}
@@ -27,7 +27,7 @@ public class Sistema{
 	public int qtdClientesPJ(){
 		int aux = 0;
 		for(int i = 0; i < clientes.size(); i++){
-			if(clientes instanceof PJ){
+			if(clientes.get(i) instanceof PJ){
     				aux++;
 			}
 		}
