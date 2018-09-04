@@ -1,0 +1,16 @@
+public class ContaBancaria{
+	private String cliente;
+	private int nconta;
+	private double saldo;
+	
+	public ContaBancaria(String cliente,int nconta,double saldo){
+		this.cliente=cliente;
+		this.nconta=nconta;
+		this.saldo=saldo;
+	}
+	public void sacar(int valor){
+		saldo=saldo-valor;
+		System.out.println("Sacou "+saldo+" RS!");
+	}
+	public void
+}
