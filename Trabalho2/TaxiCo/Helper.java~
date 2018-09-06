@@ -42,7 +42,6 @@ public class Helper
 		} else { 
 			System.out.println("Alguma coisa errada");
 		}
-		taxiCo1.showStatus();
 	}
 
 	/**
@@ -58,7 +57,6 @@ public class Helper
 		} else { 
 			System.out.println("Alguma coisa errada");
 		}
-		taxiCo1.showStatus();
 		
 	}
 
@@ -69,7 +67,7 @@ public class Helper
 		
 		System.out.println("Segundo teste");
 		helper.testArrived();
-		
+		taxiCo1.showStatus();
 	}
 }
 

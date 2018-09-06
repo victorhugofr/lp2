@@ -81,16 +81,16 @@ public class TaxiCo
     public Vehicle lookup(String id)
     {
         boolean found = false;
-        Vehicle vehicle = null;
+        Vehicle taxi = null;
         Iterator<Vehicle> it = vehiclesFleet.iterator();
         while(!found && it.hasNext()) {
-            vehicle = it.next();
-            if(id.equals(vehicle.getID())) {
+            taxi = it.next();
+            if(id.equals(taxi.getID())) {
                 found = true;
             }
         }
         if(found) {
-            return vehicle;
+            return taxi;
         }
         else {
             return null;
