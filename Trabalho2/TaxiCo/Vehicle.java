@@ -31,7 +31,7 @@ public class Vehicle
     {
         this.destination = destination;
     }
-    protected void setLocation(String location)
+    protected void setLocation(String location)// pode?
     {
         this.location = location;
     }
