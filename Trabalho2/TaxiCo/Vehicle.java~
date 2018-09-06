@@ -13,7 +13,7 @@ public class Vehicle
     public String getStatus()
     {
    	 if(destination == null){
-   	 	return id+ " is available!";
+   	 	return "taxi is available!";
    	 }else{
    	     return id + " at " + location + " headed for " +
                destination;

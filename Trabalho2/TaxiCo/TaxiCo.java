@@ -121,4 +121,28 @@ public class TaxiCo
         destinations.add("Sainsbury's");
         destinations.add("Darwin");
     }
+    public Vehicle wantaVehicle(String destination){
+    	boolean found = false;
+   	Vehicle vehicle = null;
+    	Iterator<Vehicle> it = vehiclesFleet.iterator();
+        while(!found && it.hasNext()) {
+            vehicle = it.next();
+            if(vehicle instanceof Shuttle) {
+                if (vehicle.getDestination() == destination){
+                	found = true;
+                	return vehicle;
+                }
+            }
+        }
+        it = vehiclesFleet.iterator();
+        while(!found && it.hasNext()){
+        	vehicle= it.next();
+       		if (vehicle instanceof Taxi){
+            		if(vehicle.getDestination() == null){
+            			return vehicle;
+            			found = true;
+            		}
+            	}
+        }
+    }
 }

@@ -70,6 +70,8 @@ public class Helper
 		System.out.println("Segundo teste");
 		helper.testArrived();
 		
+		System.out.println("VEICULO ENCONTRADO "+ taxiCo1.wantaVehicle("Darwin"))
+		
 	}
 }
 
