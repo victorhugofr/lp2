@@ -3,8 +3,8 @@
  * Taxis have a unique ID, a location and sometimes a destination.
  * They are either free or occupied.
  * 
- * @author David J. Barnes 
- * @version 2010.12.03
+ * @author Victor Hugo Freire Ramalho 
+ * @version 2018.09.11
  */
 public class Taxi extends Vehicle
 {

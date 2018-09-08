@@ -1,5 +1,12 @@
 import java.util.*;
-
+/**
+ * A shuttle.
+ * Shuttles have a unique ID, a location and a list of destinations.
+ * They operate a circular route.
+ * 
+ * @author Victor Hugo Freire Ramalho 
+ * @version 2018.09.11
+ */
 public class Shuttle extends Vehicle
 {
     // The circular route of this shuttle.

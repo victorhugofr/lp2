@@ -1,9 +1,10 @@
+import java.util.Scanner;
 /**
  * The test class Helper.
  * Provides the beginning of a set of tests for program development.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author Victor Hugo Freire Ramalho
+ * @version 2018.09.11
  */
 public class Helper 
 {
@@ -26,6 +27,8 @@ public class Helper
 		taxiCo1 = new TaxiCo("IMD's cars");
 		taxiCo1.addTaxi();
 		taxiCo1.addTaxi();
+		taxiCo1.addShuttle();
+		taxiCo1.addShuttle();
 		taxiCo1.addShuttle();
 	}
 
@@ -61,16 +64,27 @@ public class Helper
 		taxiCo1.showStatus();
 		
 	}
+	/**
+	 * Test which is the most compatible vehicle.
+	 */
+	public void wantVehicle(String destination)
+	{
+		System.out.println("VEICULO ENCONTRADO "+ taxiCo1.wantaVehicle(destination));
+		
+	}
 
 	public static void main(String[] args) {
+		Scanner ler = new Scanner(System.in);
+		String dest;
 		Helper helper = new Helper();
 		System.out.println("Primeiro teste");
 		helper.testBook();
 		
 		System.out.println("Segundo teste");
 		helper.testArrived();
+
+		helper.wantVehicle("Sainsbury's");
 		
-		System.out.println("VEICULO ENCONTRADO "+ taxiCo1.wantaVehicle("Darwin"))
 		
 	}
 }

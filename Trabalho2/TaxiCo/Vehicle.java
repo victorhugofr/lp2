@@ -9,7 +9,10 @@ public class Vehicle
         location = base;
         destination = null;
 	} 
-
+    /**
+     * Return the status of this vehicle.
+     * @return The status.
+     */
     public String getStatus()
     {
    	 if(destination == null){
@@ -19,26 +22,50 @@ public class Vehicle
                destination;
          }
     }
+    /**
+     * Return the ID of the vehicle.
+     * @return The ID of the vehicle.
+     */
     public String getID()
     {
         return id;
     }
+    /**
+     * Return the location of the vehicle.
+     * @return The location of the vehicle.
+     */
     public String getLocation()
     {
         return location;
     }
+    /**
+     * Return the destination of the vehicle.
+     * @return The destination of the vehicle.
+     */
     public String getDestination()
     {
         return destination;
     }
+    /**
+     * Set the intented destination of the vehicle.
+     * @param destination The intended destination.
+     */
     protected void setDestination(String destination)
     {
         this.destination = destination;
     }
-    protected void setLocation(String location)// pode?
+    /**
+     * Set the location of the vehicle.
+     * @param The location.
+     */
+    protected void setLocation(String location)
     {
         this.location = location;
     }
+    /**
+     * Indicate that this vehicle has arrived at its destination.
+     * 
+     */
     public void arrived()
     {
         location = destination;

@@ -5,8 +5,8 @@ import java.util.*;
  * Taxis move between single destinations.
  * Shuttles move around circular routes.
  * 
- * @author David J. Barnes 
- * @version 2010.12.03
+ * @author Victor Hugo Freire Ramalho
+ * @version 2018.09.11
  */
 public class TaxiCo
 {
@@ -62,7 +62,7 @@ public class TaxiCo
         // The starting point is always the base.
         route.add(base);
         // Decide on an (arbitrary) length for all routes.
-        final int ROUTE_LENGTH = 3;
+        final int ROUTE_LENGTH = 4;
         for(int i = 0; i < ROUTE_LENGTH; i++) {
             route.add(destinations.get(i));
         }
@@ -121,9 +121,14 @@ public class TaxiCo
         destinations.add("Sainsbury's");
         destinations.add("Darwin");
     }
+    /**
+     * Test which is the most compatible vehicle.
+     *@param destination of you want
+     *@return vehicle what you need
+     */
     public Vehicle wantaVehicle(String destination){
     	boolean found = false;
-   	Vehicle vehicle = null;
+   	    Vehicle vehicle = null;
     	Iterator<Vehicle> it = vehiclesFleet.iterator();
         while(!found && it.hasNext()) {
             vehicle = it.next();
@@ -138,11 +143,12 @@ public class TaxiCo
         while(!found && it.hasNext()){
         	vehicle= it.next();
        		if (vehicle instanceof Taxi){
-            		if(vehicle.getDestination() == null){
-            			return vehicle;
-            			found = true;
-            		}
+            	if(vehicle.getDestination() == null){
+                   found = true;
+            		return vehicle;
             	}
+            }
         }
+        return vehicle;
     }
 }
