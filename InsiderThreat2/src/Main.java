@@ -16,7 +16,6 @@ public class Main {
 				teste= arquivo.quebrandoLinhas();
 				Device de=new Device(teste[0],teste[1],teste[2],teste[3],teste[4]);
 				db.verifica(de);
-				db.print();
 				
 				
 					
@@ -26,8 +25,7 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+		db.print();
 		
 	}
 

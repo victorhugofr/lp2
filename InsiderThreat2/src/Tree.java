@@ -1,18 +1,25 @@
 
 public class Tree {
-	public Node root;
+	private Node root;
 	
 	public Node existe(Node root1,String el) {
-		if(root1.value==el) 
+		if(root1.getValue()==el) 
 			return root1;
 		else
-		for(int i=0;i<root1.childs.size();i++) {
-			if(root1.childs.get(i).value==el) {
-				return root1.childs.get(i);
-			}else{
-				existe(root1.childs.get(i),el);
+		for(int i=0;i<root1.getChilds().size();i++) {
+			if(root1.getChilds().get(i).getValue()==el) {
+				return root1.getChilds().get(i);
 			}
 		}
+		for(int i=0;i<root1.getChilds().size();i++) {
+			existe(root1.getChilds().get(i),el);
+		}
 		return null;
+	}
+	public void setRoot(Node root) {
+		this.root=root;
+	}
+	public Node getRoot() {
+		return root;
 	}
 }
