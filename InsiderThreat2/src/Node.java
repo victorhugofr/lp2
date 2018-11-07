@@ -36,5 +36,14 @@ public class Node {
 	public void setChilds(ArrayList<Node> childs) {
 		this.childs = childs;
 	}
-    
+	public int getNumberOfChildren() {
+        return getChilds().size();
+    }
+
+    public boolean hasChildren() {
+        return (getNumberOfChildren() > 0);
+    }
+    public Node getChildAt(int index) throws IndexOutOfBoundsException {
+        return childs.get(index);
+    }
 }
