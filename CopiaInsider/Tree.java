@@ -2,7 +2,7 @@
 public class Tree {
 	private Node root;
 	
-	 public Node existe(Node currentNode, String dataToFind) {
+	 public Node search(Node currentNode, String dataToFind) {//Buscar node
 	        Node returnNode = null;
 	        int i = 0;
 
@@ -13,7 +13,7 @@ public class Tree {
 	        else if(currentNode.hasChildren()) {
 	            i = 0;
 	            while(returnNode == null && i < currentNode.getNumberOfChildren()) {
-	                returnNode = existe(currentNode.getChildAt(i), dataToFind);
+	                returnNode = search(currentNode.getChildAt(i), dataToFind);
 	                i++;
 	            }
 	        }

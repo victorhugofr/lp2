@@ -14,14 +14,14 @@ public class DataBase {
 		boolean existe= false;
 		for(int i=0;i<users.size();i++) {
 		//	System.out.println(teste.getUser());
-			aux=users.get(i).existe(users.get(i).getRoot(),teste.getUser()); 
+			aux=users.get(i).search(users.get(i).getRoot(),teste.getUser()); 
 			if(aux!=null) {//procura usuario
 				existe=true;
 				aux.getHist()[Integer.parseInt(teste.getDateString().substring(11, 13))]++;
-				aux2=users.get(i).existe(aux,teste.getPc()); 
+				aux2=users.get(i).search(aux,teste.getPc()); 
 				if(aux2!=null) {//procura PC
 					aux.getHist()[Integer.parseInt(teste.getDateString().substring(11, 13))]++;
-					aux3=users.get(i).existe(aux,teste.getActivity());
+					aux3=users.get(i).search(aux,teste.getActivity());
 					if(aux3!=null) {//procura atividade
 						aux3.getHist()[Integer.parseInt(teste.getDateString().substring(11, 13))]++;
 					}else {

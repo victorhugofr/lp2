@@ -9,6 +9,9 @@ public class Action {
 	private String pc;
 	private String activity;
 	protected SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+	public Action() {
+		
+	}
 	public Action(String id, String date, String user, String pc, String activity) {
 		this.id = id;
 //		this.date = date;
